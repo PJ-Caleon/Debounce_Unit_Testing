@@ -1,0 +1,27 @@
+---
+:source:
+  :file: test/test_debounce.c
+  :dirname: test
+  :basename: test_debounce.c
+:successes:
+- :test: test_first_press_should_trigger
+  :line: 13
+  :message: ''
+  :unity_test_time: 0
+- :test: test_immediate_second_press_should_fail
+  :line: 18
+  :message: ''
+  :unity_test_time: 0
+- :test: test_press_after_delay_should_work
+  :line: 29
+  :message: ''
+  :unity_test_time: 0
+:failures: []
+:ignores: []
+:counts:
+  :total: 3
+  :passed: 3
+  :failed: 0
+  :ignored: 0
+:stdout: []
+:time: 0.007264236000082747

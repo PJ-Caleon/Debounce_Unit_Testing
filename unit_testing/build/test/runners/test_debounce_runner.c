@@ -16,7 +16,9 @@ char* GlobalOrderError;
 /*=======External Functions This Runner Calls=====*/
 extern void setUp(void);
 extern void tearDown(void);
-extern void test_button_press_triggers_once(void);
+extern void test_first_press_should_trigger(void);
+extern void test_immediate_second_press_should_fail(void);
+extern void test_press_after_delay_should_work(void);
 
 
 /*=======Mock Management=====*/
@@ -88,7 +90,11 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
     {
       UnityPrint("test_debounce.");
       UNITY_PRINT_EOL();
-      UnityPrint("  test_button_press_triggers_once");
+      UnityPrint("  test_first_press_should_trigger");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_immediate_second_press_should_fail");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_press_after_delay_should_work");
       UNITY_PRINT_EOL();
       return 0;
     }
@@ -96,7 +102,9 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
   }
 #endif
   UnityBegin("test_debounce.c");
-  run_test(test_button_press_triggers_once, "test_button_press_triggers_once", 12);
+  run_test(test_first_press_should_trigger, "test_first_press_should_trigger", 13);
+  run_test(test_immediate_second_press_should_fail, "test_immediate_second_press_should_fail", 18);
+  run_test(test_press_after_delay_should_work, "test_press_after_delay_should_work", 29);
 
   return UNITY_END();
 }

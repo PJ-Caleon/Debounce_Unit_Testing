@@ -13,7 +13,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y ruby-full build-essential
 
       - name: Install Ceedling
-        run: gem install ceedling
+        run: sudo gem install ceedling
 
       - name: Run Ceedling tests
         working-directory: unit_testing
